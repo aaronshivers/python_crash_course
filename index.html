@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#python">Python</a>
+<ul>
+<li><a href="#setup-python">Setup Python</a></li>
+<li><a href="#accessing-python">Accessing Python</a></li>
+<li><a href="#basics">Basics</a></li>
+<li><a href="#assignment-operators">Assignment Operators</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="python">Python</h1>
+<h2 id="setup-python">Setup Python</h2>
+<h3 id="check-for-previously-installed-versions-of-python">Check for previously installed versions of python</h3>
+<ol>
+<li>Open your terminal.
+<ul>
+<li>Type <code>python3 --version</code> to see if you have Python 3 already installed.</li>
+<li>If you have Python 3 already, you’ll see something like <code>Python 3.7.3</code>, which tells us what version of python you have.</li>
+<li>If that didn’t work, try typing <code>python --version</code>.</li>
+<li>If neither option worked, then you need to install Python.</li>
+</ul>
+</li>
+</ol>
+<h3 id="install-python">Install Python</h3>
+<ol>
+<li>Go to <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></li>
+<li>Download and Install the latest version of Python for your specific operating system</li>
+<li>Verify installation with the steps from the section titled “Check for previously installed versions of python”</li>
+</ol>
+<h2 id="accessing-python">Accessing Python</h2>
+<ol>
+<li>Open your terminal.</li>
+<li>Type  <code>python3</code> or <code>python</code> depending on how your operating system accesses Python.</li>
+<li>When you’re finished press <code>ctrl + d</code> or type <code>exit()</code> to exit Python.</li>
+</ol>
+<h2 id="basics">Basics</h2>
+<h3 id="printing-to-the-console">Printing to the Console</h3>
+<p>Python provides a built-in method to print to the console. If we wanted to print a message like, “Hello Humanoids!”, We should take the message, and surround it with quotation marks, then surround those with parentheses, then prefix it with the word print. Like this…</p>
+<pre class=" language-py"><code class="prism  language-py"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello Humanoids!"</span><span class="token punctuation">)</span>
+</code></pre>
+<iframe height="400px" width="100%" src="https://repl.it/@aaronshivers/print?lite=true" scrolling="no" allowfullscreen="true"></iframe>
+<h3 id="functions">Functions</h3>
+<p>If we wanted to create a function that prints our message it would look like this…</p>
+<pre class=" language-py"><code class="prism  language-py"><span class="token keyword">def</span> <span class="token function">say_hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello Humanoids!"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>We define the function by writing “def” followed by the name of the function, then a set of parentheses, and finally a colon.</p>
+<p>Underneath that we indent the next line with four spaces exactly, then we put our print method with our message.</p>
+<p>We can now use the say_hello function anywhere in our program instead of typing the whole print method with the message.</p>
+<p>Now to invoke the function…</p>
+<pre class=" language-py"><code class="prism  language-py">say_hello<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>This will print “Hello Humanoids!” to the console.</p>
+<iframe height="400px" width="100%" src="https://repl.it/@aaronshivers/sayhello1?lite=true" scrolling="no" allowfullscreen="true"></iframe>
+<h3 id="arguments-and-parameters">Arguments and Parameters</h3>
+<p>I think we should make our function more dynamic. What if we’re not talking with Humanoids? That’s where arguments and parameters come in to play.</p>
+<p>Let’s take our function and add a parameter called “species”.</p>
+<pre class=" language-py"><code class="prism  language-py"><span class="token keyword">def</span> <span class="token function">say_hello</span><span class="token punctuation">(</span>species<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello Humanoids!"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Now we’ll use the format feature in python to use the new parameter inside of our print method.</p>
+<p>First put the letter “f” in front of the quotes, then replace “Humanoids” with species surrounded by curly braces.</p>
+<pre class=" language-py"><code class="prism  language-py"><span class="token keyword">def</span> <span class="token function">say_hello</span><span class="token punctuation">(</span>species<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"Hello {species}!"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Now we’ll add an argument to the function invocation for each species that we want to say hello to.</p>
+<pre class=" language-py"><code class="prism  language-py">say_hello<span class="token punctuation">(</span><span class="token string">"Humanoids"</span><span class="token punctuation">)</span>
+say_hello<span class="token punctuation">(</span><span class="token string">"Cyborgs"</span><span class="token punctuation">)</span>
+say_hello<span class="token punctuation">(</span><span class="token string">"Arachnids"</span><span class="token punctuation">)</span>
+</code></pre>
+<iframe height="400px" width="100%" src="https://repl.it/@aaronshivers/sayhello2?lite=true" scrolling="no" allowfullscreen="true"></iframe>
+<p>I just realized that not all species understand the word “hello”, so we should add a second argument and parameter for that. Make sure that the order of your arguments in the invocation matches the order of the parameters in the function definition.</p>
+<pre class=" language-py"><code class="prism  language-py"><span class="token keyword">def</span> <span class="token function">say_hello</span><span class="token punctuation">(</span>greeting<span class="token punctuation">,</span> species<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"{greeting} {species}!"</span><span class="token punctuation">)</span>
+
+
+say_hello<span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">,</span> <span class="token string">"Humanoids"</span><span class="token punctuation">)</span>
+say_hello<span class="token punctuation">(</span><span class="token string">"0100100001100101011011000110110001101111"</span><span class="token punctuation">,</span> <span class="token string">"Cyborgs"</span><span class="token punctuation">)</span>
+say_hello<span class="token punctuation">(</span><span class="token string">"Click Click Click"</span><span class="token punctuation">,</span> <span class="token string">"Arachnids"</span><span class="token punctuation">)</span>
+</code></pre>
+<iframe height="400px" width="100%" src="https://repl.it/@aaronshivers/sayhello3?lite=true" scrolling="no" allowfullscreen="true"></iframe>
+<h3 id="challenge-1">Challenge 1</h3>
+<p>You are a grade school teacher, and it’s time to do your morning roll call, but it’s not enough to just say each student’s name. You need to say each student’s name in reverse order.</p>
+<p>Create a function that takes a student’s first and last name as arguments, and prints the name in reverse order.</p>
+<h4 id="example">Example:</h4>
+<p>If you invoke the function</p>
+<pre class=" language-py"><code class="prism  language-py">roll_call<span class="token punctuation">(</span><span class="token string">"Bobby"</span><span class="token punctuation">,</span> <span class="token string">"Hill"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>it should print…<br>
+<code>Hill, Bobby</code></p>
+<p>and,</p>
+<pre class=" language-py"><code class="prism  language-py">roll_call<span class="token punctuation">(</span><span class="token string">"Joseph"</span><span class="token punctuation">,</span> <span class="token string">"Gribble"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>should print…<br>
+<code>Gribble, Joseph</code></p>
+<h3 id="basic-operators">Basic Operators</h3>
+<p>Let’s look at some of the basic operators Python has to offer.</p>
+<h4 id="arithmetic-operators">Arithmetic Operators</h4>
+<p>We can…</p>
+<p><strong>add</strong></p>
+<pre class=" language-py"><code class="prism  language-py"><span class="token number">4</span> <span class="token operator">+</span> <span class="token number">3</span>
+</code></pre>
+<p><strong>subtract</strong></p>
+<pre class=" language-py"><code class="prism  language-py"><span class="token number">6</span> <span class="token operator">-</span> <span class="token number">3</span>
+</code></pre>
+<p><strong>multiply</strong></p>
+<pre class=" language-py"><code class="prism  language-py"><span class="token number">2</span> <span class="token operator">*</span> <span class="token number">3</span>
+</code></pre>
+<p><strong>divide</strong></p>
+<pre class=" language-py"><code class="prism  language-py"><span class="token number">8</span> <span class="token operator">/</span> <span class="token number">2</span>
+</code></pre>
+<p>Let’s make some functions that use arithmetic operators.</p>
+<p><strong>add</strong></p>
+<pre class=" language-py"><code class="prism  language-py"><span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">return</span> num1 <span class="token operator">+</span> num2
+</code></pre>
+<p><strong>subtract</strong></p>
+<pre class=" language-py"><code class="prism  language-py"><span class="token keyword">def</span> <span class="token function">subtract</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">return</span> num1 <span class="token operator">-</span> num2
+</code></pre>
+<p>We can now pass the numbers we want to calculate into these functions…</p>
+<pre class=" language-py"><code class="prism  language-py">add<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token comment"># 6</span>
+subtract<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment"># 3</span>
+</code></pre>
+<iframe height="400px" width="100%" src="https://repl.it/@aaronshivers/arithmeticoperators?lite=true" scrolling="no" allowfullscreen="true"></iframe>
+<h2 id="assignment-operators">Assignment Operators</h2>
+<p>You can assign values to variables by using assignment operators.</p>
+<p><strong>=</strong></p>
+<pre class=" language-py"><code class="prism  language-py">hungry <span class="token operator">=</span> <span class="token boolean">True</span>
+eye_balls <span class="token operator">=</span> <span class="token number">2</span>
+favorite_color <span class="token operator">=</span> <span class="token string">"green"</span>
+</code></pre>
+<p>You can even reassign values.</p>
+<p>Start with a variable</p>
+<pre class=" language-py"><code class="prism  language-py">vacation_days <span class="token operator">=</span> <span class="token number">2</span>
+</code></pre>
+<p>You can give it a completely different value.</p>
+<pre class=" language-py"><code class="prism  language-py">vacation_days <span class="token operator">=</span> <span class="token number">4</span>
+</code></pre>
+<p>You can take the existing value, then use one of the arithmetic operators to get a new value.</p>
+<pre class=" language-py"><code class="prism  language-py">vacation_days <span class="token operator">=</span> vacation_days <span class="token operator">+</span> <span class="token number">3</span>
+</code></pre>
+<p>You can also use the shorthand version of the previous example. This takes the existing value, adds it to the value on the right of the operator, and reassigns the variable to the new value.</p>
+<pre class=" language-py"><code class="prism  language-py">vacation_days <span class="token operator">+=</span> <span class="token number">4</span>
+</code></pre>
+<iframe height="400px" width="100%" src="https://repl.it/@aaronshivers/assignmentoperators?lite=true" scrolling="no" allowfullscreen="true"></iframe>
+<h3 id="challenge-2">Challenge 2</h3>
+<p>You work at an ice cream parlor. How many scoops of ice cream you serve each customer depends on their age group. There are three age groups:</p>
+<ul>
+<li><code>children</code> = 1 scoop</li>
+<li><code>adults</code> = 2 scoops</li>
+<li><code>seniors</code> = 3 scoops</li>
+</ul>
+<p>When a family places an order. What is the total number of scoops should you serve them?</p>
+<h4 id="examples">Examples</h4>
+<pre class=" language-py"><code class="prism  language-py">scoop_it<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># 10</span>
+scoop_it<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment"># 11</span>
+scoop_it<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment"># 10</span>
+</code></pre>
+<h4 id="notes">Notes</h4>
+<ul>
+<li>Just print the result to the console.</li>
+<li>The order that the customers are served is <code>scoop_it(children, adults, seniors)</code></li>
+<li>Remember that we’re looking for the total number of scoops served.</li>
+</ul>
+
+    </div>
+  </div>
+</body>
+
+</html>
